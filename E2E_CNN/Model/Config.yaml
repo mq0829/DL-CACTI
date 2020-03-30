@@ -1,0 +1,30 @@
+---
+# === Configure Main function === #
+category: Data_training/train_data
+category_valid: Data_training/valid_data
+#category_test: dataset                                   
+data_name: scene
+mask_name: mask
+model_name: Decoder
+result_dir: E2E_CNN/Result
+result_model: Model-Config
+result_data: Validation-Result
+model_filename: #Result/Model-Config/Cr10_model/models-0.0377-22256  #(For finetune)
+GPU: 0
+
+# === Configure Model Handler === #
+# Data Assignment
+batch_size: 1
+segset_size: 8
+height_seg: 73
+height_occupy: 12
+# Model training Controler
+epochs: 500
+patience: 400
+learning_rate: 0.01
+lr_decay: 0.8
+lr_decay_epoch: 30
+lr_decay_interval: 30 
+loss_func: RMSE
+upbound: 1
+max_grad_norm: 5.0
